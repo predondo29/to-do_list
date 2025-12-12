@@ -1,0 +1,31 @@
+# Dependencias
+/node_modules
+/dist
+/build
+/coverage
+
+# Archivos de depuración y logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Archivos de Mongoose/MongoDB (si se usan archivos locales de DB)
+*.sqlite
+*.sqlite-journal
+/db/*.sqlite
+/db/*.sqlite-journal
+
+# Archivos generados automáticamente
+.DS_Store
+Thumbs.db
+
+# Configuraciones sensibles (Ej: variables de entorno)
+.env
+.env.development
+.env.production
+.env.local
+
+# IDEs (Visual Studio Code, JetBrains, etc.)
+.vscode/
+.idea/
