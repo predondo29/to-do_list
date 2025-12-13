@@ -1,6 +1,9 @@
 
 import express from 'express'
-import "dontenv/config"
+import "dotenv/config"
+import userRouter from './routes/user.route.js'
+import taskRouter from './routes/task.route.js'
+import taskBoardRouter from './routes/taskBoard.route.js'
 
 // !  Variables y constantes
 const app = express()
@@ -9,8 +12,8 @@ const PORT = process.env.PORT || 8080
 // !  Configuraciones
 
 // ! Middlewares
-app.use(express().json())
-app.use(express().urlencoded( { extended: false } ))
+// app.use(express().json())
+// app.use(express().urlencoded( { extended: false } ))
 
 // ! Rutas
 app.get('/', (req, res) => {
