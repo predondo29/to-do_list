@@ -39,10 +39,11 @@ const updateUser = async (req, res) => {
     }
 }
 const addTaskBoard = async (req, res) => {
-    const newTaskBoard = req.body
-    console.log(newTaskBoard);
+    const id = req.user._id
+    const taskBoardId = req.body //Este new TaskBoard desde el front se llama a la ruta de TaskBoard para crear una nueva y acá lo que se pasa es el ID 
+    console.log(taskBoardId);
     try {
-        const newTask = await userService.createTaskBoard(newTaskBoard)
+        const newTask = await userService.addTaskBoard(id, taskBoardId)
         res.send(newTask)
     } catch (error) {
         return new Error({ message: 'Error al crear la tabla'})
@@ -90,9 +91,15 @@ const deleteUser = async (req, res) => {
     const id = req.user._id //No sé si sería así
     try {
         const userDeleted = await userService.deleteUser(id)
-        res.status(200).json({
-            message: 'Se eliminó la cuenta exitosamente'
-        })
+        if(userDeleted) {
+            res.status(200).json({
+                message: 'Se eliminó la cuenta exitosamente'
+            })
+        } else {
+            res.status(500).json({
+                message: 'Error al eliminar'
+            })
+        }
     } catch (error) {
         return new Error({ message: 'Error al eliminar usuario'})
     }
