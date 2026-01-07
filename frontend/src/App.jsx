@@ -1,6 +1,13 @@
+import Rutas from "./routes/Rutas"
+
 const App = () => {
     return (
-        <div>App</div>
+        <div>
+            <main>
+                <Rutas/>
+            </main>
+
+        </div>
     )
 }
 
