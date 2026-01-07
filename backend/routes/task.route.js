@@ -12,3 +12,5 @@ router.post('/', taskController.addTask)
 router.delete('/:id', taskController.deleteTask)
 // (U) UPDATE - Modificar una tarea por ID en una tabla
 router.put('/:id', taskController.updateTask)
+
+export default router

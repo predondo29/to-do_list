@@ -18,6 +18,6 @@ const taskBoardSchema = new Schema(
     }
 )
 
-const TaskBoardModel = mongoose.model('TaskBoard', taskBoardSchema, 'taskBoard')
+const TaskBoardModel = mongoose.model('TaskBoard', taskBoardSchema, 'tablaTareas')
 
 export default TaskBoardModel

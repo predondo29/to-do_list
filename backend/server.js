@@ -1,9 +1,9 @@
 
 import express from 'express'
+import mongoose from 'mongoose'
 import "dotenv/config"
 import userRouter from './routes/user.route.js'
 import taskRouter from './routes/task.route.js'
-// import taskRouter from './routes/task.route.js'
 // import taskBoardRouter from './routes/taskBoard.route.js'
 
 // !  Variables y constantes
@@ -22,7 +22,6 @@ app.get('/', (req, res) => {
 })
 app.get('/api/user', userRouter)
 app.get('/api/task', taskRouter)
-// app.get('/api/task', taskRouter)
 // app.get('/api/taskBoard', taskBoardRouter)
 
 // ! Arranque del servidor

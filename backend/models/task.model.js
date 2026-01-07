@@ -6,20 +6,23 @@ const taskSchema = new Schema(
         name: {
             type: String,
             required: true,
+            trim: true,
         },
         description: {
             type: String,
             required: true,
+            trim: true,
         },
         type: {
+            type: String,
             enum: ["event", "task", "birthday"],
-            requires: true
+            required: true,
         },
         startDuration: {
-            
+            type: String,
         },
         finalDuration: {
-
+            type: String,
         }
     },
     {
@@ -28,6 +31,6 @@ const taskSchema = new Schema(
     }
 )
 
-const Task = mongoose.model('Task', taskSchema, 'task')
+const Task = mongoose.model('Task', taskSchema, 'tareas')
 
 export default Task
