@@ -2,6 +2,7 @@
 import express from 'express'
 import "dotenv/config"
 import userRouter from './routes/user.route.js'
+import taskRouter from './routes/task.route.js'
 // import taskRouter from './routes/task.route.js'
 // import taskBoardRouter from './routes/taskBoard.route.js'
 
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 app.get('/api/user', userRouter)
+app.get('/api/task', taskRouter)
 // app.get('/api/task', taskRouter)
 // app.get('/api/taskBoard', taskBoardRouter)
 
